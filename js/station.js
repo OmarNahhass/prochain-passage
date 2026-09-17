@@ -17,7 +17,7 @@ export function upcomingArrivals(
     if (wait < -60 || wait > horizon) continue;
 
     const last = trip.stops.length - 1;
-    const dest = i === last ? "Terminus" : trip.stops[last];
+    const dest = i === last ? "end of line" : trip.stops[last];
     const key = trip.route + "|" + dest;
 
     if (!byDest.has(key))

@@ -1,0 +1,148 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+#screen {
+  display: flex;
+  height: 100vh;
+}
+
+/* ---------- Map ---------- */
+
+#mapside {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5vh;
+}
+
+#map { width: 100%; height: 100%; }
+
+#map text {
+  paint-order: stroke;
+  stroke: #000;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  font-size: 14px !important;
+  fill: #8a8a8a !important;
+}
+
+.you-are-here {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { r: 26; opacity: 1; }
+  50%      { r: 34; opacity: 0.4; }
+}
+
+/* ---------- Arrivals panel ---------- */
+
+#panel {
+  width: 30vw;
+  min-width: 340px;
+  padding: 3vh 2.4vw;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #1c1c1c;
+}
+
+#panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1.6vh;
+}
+
+#station-name {
+  font-size: 3.1vh;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+#clock {
+  font-size: 3.1vh;
+  font-variant-numeric: tabular-nums;
+  color: #888;
+}
+
+#arrivals {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4vh;
+}
+
+.dir {
+  border-left: 0.9vh solid var(--line);
+  padding-left: 1.4vw;
+}
+
+.dest {
+  font-size: 2.4vh;
+  color: #b8b8b8;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4vh;
+}
+
+.first {
+  font-size: 7.2vh;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.first.boarding {
+  color: var(--line);
+  animation: blink 1.4s steps(2, start) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.35; } }
+
+.rest {
+  font-size: 2.2vh;
+  color: #7c7c7c;
+  margin-top: 0.5vh;
+  font-variant-numeric: tabular-nums;
+}
+
+.closed {
+  font-size: 4vh;
+  color: #777;
+  text-align: center;
+}
+.closed span {
+  display: block;
+  font-size: 2.2vh;
+  color: #555;
+  margin-top: 1vh;
+}
+
+#panel footer {
+  border-top: 1px solid #262626;
+  padding-top: 1.4vh;
+  font-size: 1.7vh;
+  color: #5a5a5a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+/* Halo pulses when a train is about to arrive */
+.imminent {
+  animation: halo 1.1s ease-in-out infinite;
+}
+
+@keyframes halo {
+  0%, 100% { opacity: 0.18; }
+  50%      { opacity: 0.55; }
+}

@@ -19,7 +19,7 @@
  },
  "stations": {
   "Angrignon": {
-   "x": 521,
+   "x": 501,
    "y": 920,
    "routes": [
     "1"
@@ -27,56 +27,56 @@
    "terminal": true
   },
   "Monk": {
-   "x": 561,
-   "y": 900,
+   "x": 542,
+   "y": 905,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Jolicoeur": {
-   "x": 609,
-   "y": 873,
+   "x": 592,
+   "y": 883,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Verdun": {
-   "x": 650,
-   "y": 860,
+   "x": 636,
+   "y": 871,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "De l'Église": {
-   "x": 673,
-   "y": 847,
+   "x": 660,
+   "y": 858,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "LaSalle": {
-   "x": 681,
-   "y": 802,
+   "x": 673,
+   "y": 821,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Charlevoix": {
-   "x": 672,
-   "y": 766,
+   "x": 668,
+   "y": 790,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Lionel-Groulx": {
-   "x": 625,
-   "y": 749,
+   "x": 617,
+   "y": 780,
    "routes": [
     "1",
     "2"
@@ -84,56 +84,56 @@
    "terminal": false
   },
   "Atwater": {
-   "x": 599,
-   "y": 711,
+   "x": 590,
+   "y": 748,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Guy-Concordia": {
-   "x": 637,
-   "y": 675,
+   "x": 639,
+   "y": 710,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Peel": {
-   "x": 664,
-   "y": 639,
+   "x": 677,
+   "y": 667,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "McGill": {
-   "x": 682,
-   "y": 615,
+   "x": 701,
+   "y": 637,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Place-des-Arts": {
-   "x": 700,
-   "y": 583,
+   "x": 726,
+   "y": 595,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Saint-Laurent": {
-   "x": 717,
-   "y": 559,
+   "x": 745,
+   "y": 564,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Berri-UQAM": {
-   "x": 733,
-   "y": 529,
+   "x": 763,
+   "y": 524,
    "routes": [
     "1",
     "2",
@@ -142,95 +142,95 @@
    "terminal": true
   },
   "Beaudry": {
-   "x": 749,
-   "y": 495,
+   "x": 778,
+   "y": 481,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Papineau": {
-   "x": 765,
-   "y": 462,
+   "x": 790,
+   "y": 442,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Frontenac": {
-   "x": 762,
-   "y": 399,
+   "x": 781,
+   "y": 368,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Préfontaine": {
-   "x": 747,
-   "y": 346,
+   "x": 759,
+   "y": 309,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Joliette": {
-   "x": 754,
-   "y": 317,
+   "x": 762,
+   "y": 281,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Pie-IX": {
-   "x": 748,
-   "y": 279,
-   "routes": [
-    "1"
-   ],
-   "terminal": false
-  },
-  "Viau": {
-   "x": 759,
+   "x": 749,
    "y": 243,
    "routes": [
     "1"
    ],
    "terminal": false
   },
+  "Viau": {
+   "x": 756,
+   "y": 212,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
   "Assomption": {
-   "x": 753,
-   "y": 201,
+   "x": 744,
+   "y": 174,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Cadillac": {
-   "x": 751,
-   "y": 165,
+   "x": 738,
+   "y": 144,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Langelier": {
-   "x": 761,
-   "y": 139,
+   "x": 744,
+   "y": 124,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Radisson": {
-   "x": 772,
-   "y": 110,
+   "x": 751,
+   "y": 102,
    "routes": [
     "1"
    ],
    "terminal": false
   },
   "Honoré-Beaugrand": {
-   "x": 782,
+   "x": 757,
    "y": 80,
    "routes": [
     "1"
@@ -238,56 +238,56 @@
    "terminal": true
   },
   "Côte-Vertu": {
-   "x": 187,
-   "y": 530,
+   "x": 148,
+   "y": 521,
    "routes": [
     "2"
    ],
    "terminal": true
   },
   "Du Collège": {
-   "x": 213,
-   "y": 561,
+   "x": 169,
+   "y": 555,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "De la Savane": {
-   "x": 260,
-   "y": 620,
+   "x": 212,
+   "y": 621,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Namur": {
-   "x": 295,
-   "y": 656,
+   "x": 245,
+   "y": 663,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Plamondon": {
-   "x": 349,
-   "y": 664,
+   "x": 297,
+   "y": 678,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Côte-Sainte-Catherine": {
-   "x": 372,
-   "y": 681,
+   "x": 322,
+   "y": 700,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Snowdon": {
-   "x": 398,
-   "y": 723,
+   "x": 354,
+   "y": 745,
    "routes": [
     "2",
     "5"
@@ -295,120 +295,120 @@
    "terminal": true
   },
   "Villa-Maria": {
-   "x": 439,
-   "y": 759,
+   "x": 403,
+   "y": 784,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Vendôme": {
-   "x": 514,
-   "y": 794,
+   "x": 489,
+   "y": 820,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Place-Saint-Henri": {
-   "x": 593,
-   "y": 777,
+   "x": 579,
+   "y": 806,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Georges-Vanier": {
-   "x": 646,
-   "y": 713,
+   "x": 645,
+   "y": 745,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Lucien-L'Allier": {
-   "x": 676,
-   "y": 676,
+   "x": 684,
+   "y": 704,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Bonaventure": {
-   "x": 696,
-   "y": 652,
+   "x": 711,
+   "y": 676,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Square-Victoria–OACI": {
-   "x": 718,
-   "y": 624,
+   "x": 738,
+   "y": 642,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Place-d'Armes": {
-   "x": 736,
-   "y": 592,
+   "x": 761,
+   "y": 601,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Champ-de-Mars": {
-   "x": 751,
-   "y": 564,
+   "x": 777,
+   "y": 567,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Sherbrooke": {
-   "x": 701,
-   "y": 497,
+   "x": 732,
+   "y": 482,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Mont-Royal": {
-   "x": 637,
-   "y": 443,
+   "x": 656,
+   "y": 401,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Laurier": {
-   "x": 604,
-   "y": 419,
+   "x": 607,
+   "y": 365,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Rosemont": {
-   "x": 537,
-   "y": 388,
+   "x": 510,
+   "y": 328,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Beaubien": {
-   "x": 497,
-   "y": 369,
+   "x": 459,
+   "y": 313,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Jean-Talon": {
-   "x": 452,
-   "y": 350,
+   "x": 407,
+   "y": 299,
    "routes": [
     "2",
     "5"
@@ -416,48 +416,48 @@
    "terminal": false
   },
   "Jarry": {
-   "x": 392,
-   "y": 334,
+   "x": 343,
+   "y": 292,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Crémazie": {
-   "x": 352,
-   "y": 323,
+   "x": 305,
+   "y": 288,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Sauvé": {
-   "x": 291,
-   "y": 305,
+   "x": 250,
+   "y": 278,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "Henri-Bourassa": {
-   "x": 249,
-   "y": 291,
+   "x": 215,
+   "y": 271,
    "routes": [
     "2"
    ],
    "terminal": true
   },
   "Cartier": {
-   "x": 206,
-   "y": 268,
+   "x": 182,
+   "y": 255,
    "routes": [
     "2"
    ],
    "terminal": false
   },
   "De la Concorde": {
-   "x": 120,
-   "y": 277,
+   "x": 112,
+   "y": 273,
    "routes": [
     "2"
    ],
@@ -465,103 +465,103 @@
   },
   "Montmorency": {
    "x": 80,
-   "y": 293,
+   "y": 292,
    "routes": [
     "2"
    ],
    "terminal": true
   },
   "Longueuil-Université de Sherbrooke": {
-   "x": 874,
-   "y": 465,
+   "x": 884,
+   "y": 451,
    "routes": [
     "4"
    ],
    "terminal": true
   },
   "Jean-Drapeau": {
-   "x": 837,
-   "y": 543,
+   "x": 854,
+   "y": 537,
    "routes": [
     "4"
    ],
    "terminal": false
   },
   "Côte-des-Neiges": {
-   "x": 410,
-   "y": 660,
+   "x": 357,
+   "y": 683,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Université-de-Montréal": {
-   "x": 430,
-   "y": 620,
+   "x": 372,
+   "y": 643,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Édouard-Montpetit": {
-   "x": 447,
-   "y": 574,
+   "x": 383,
+   "y": 590,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Outremont": {
-   "x": 434,
-   "y": 485,
+   "x": 365,
+   "y": 465,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Acadie": {
-   "x": 399,
-   "y": 464,
+   "x": 331,
+   "y": 439,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Parc": {
-   "x": 398,
-   "y": 414,
+   "x": 337,
+   "y": 379,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "De Castelnau": {
-   "x": 424,
-   "y": 376,
+   "x": 370,
+   "y": 331,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Fabre": {
-   "x": 488,
-   "y": 302,
+   "x": 455,
+   "y": 249,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "D'Iberville": {
-   "x": 521,
-   "y": 265,
+   "x": 495,
+   "y": 213,
    "routes": [
     "5"
    ],
    "terminal": false
   },
   "Saint-Michel": {
-   "x": 531,
-   "y": 234,
+   "x": 508,
+   "y": 187,
    "routes": [
     "5"
    ],
@@ -1397,5 +1397,6 @@
    "to": "Snowdon",
    "seconds": 120
   }
- ]
+ ],
+ "viewBox": "35 35 894 930"
 }

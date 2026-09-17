@@ -38,6 +38,10 @@ function formatWait(sec) {
   return Math.round(sec / 60) + " min";
 }
 
+function displayName(name) {
+  return name.replace(/^Longueuil.*/, "Longueuil");
+}
+
 const { rows, pos, trips } = await loadData();
 const network = await fetch("network.json").then((r) => r.json());
 drawNetwork(networkLayer, rows, pos);
@@ -94,8 +98,8 @@ function updatePanel() {
       const gap = headway(g.waits);
       return `
       <div class="dest" style="border-color:${COLORS[g.route]}">
-        <div class="where">to ${g.dest}</div>
-        <div class="waits">${g.waits.map(formatWait).join(" · ")}</div>
+      <div class="where">to ${displayName(g.dest)}</div>
+      <div class="waits">${g.waits.map(formatWait).join(" · ")}</div>
         ${gap ? `<div class="gap">every ~${Math.round(gap / 60)} min</div>` : ""}
       </div>`;
     })

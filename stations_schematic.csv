@@ -1,74 +1,74 @@
 route_id,seq,stop_name,x,y
-1,1,Station Angrignon,521,920
-1,2,Station Monk,561,900
-1,3,Station Jolicoeur,609,873
-1,4,Station Verdun,650,860
-1,5,Station De l'Église,673,847
-1,6,Station LaSalle,681,802
-1,7,Station Charlevoix,672,766
-1,8,Station Lionel-Groulx,625,749
-1,9,Station Atwater,599,711
-1,10,Station Guy-Concordia,637,675
-1,11,Station Peel,664,639
-1,12,Station McGill,682,615
-1,13,Station Place-des-Arts,700,583
-1,14,Station Saint-Laurent,717,559
-1,15,Station Berri-UQAM,733,529
-1,16,Station Beaudry,749,495
-1,17,Station Papineau,765,462
-1,18,Station Frontenac,762,399
-1,19,Station Préfontaine,747,346
-1,20,Station Joliette,754,317
-1,21,Station Pie-IX,748,279
-1,22,Station Viau,759,243
-1,23,Station Assomption,753,201
-1,24,Station Cadillac,751,165
-1,25,Station Langelier,761,139
-1,26,Station Radisson,772,110
-1,27,Station Honoré-Beaugrand,782,80
-2,1,Station Côte-Vertu,187,530
-2,2,Station Du Collège,213,561
-2,3,Station De la Savane,260,620
-2,4,Station Namur,295,656
-2,5,Station Plamondon,349,664
-2,6,Station Côte-Sainte-Catherine,372,681
-2,7,Station Snowdon,398,723
-2,8,Station Villa-Maria,439,759
-2,9,Station Vendôme,514,794
-2,10,Station Place-Saint-Henri,593,777
-2,11,Station Lionel-Groulx,625,749
-2,12,Station Georges-Vanier,646,713
-2,13,Station Lucien-L'Allier,676,676
-2,14,Station Bonaventure,696,652
-2,15,Station Square-Victoria–OACI,718,624
-2,16,Station Place-d'Armes,736,592
-2,17,Station Champ-de-Mars,751,564
-2,18,Station Berri-UQAM,733,529
-2,19,Station Sherbrooke,701,497
-2,20,Station Mont-Royal,637,443
-2,21,Station Laurier,604,419
-2,22,Station Rosemont,537,388
-2,23,Station Beaubien,497,369
-2,24,Station Jean-Talon,452,350
-2,25,Station Jarry,392,334
-2,26,Station Crémazie,352,323
-2,27,Station Sauvé,291,305
-2,28,Station Henri-Bourassa,249,291
-2,29,Station Cartier -Zone B,206,268
-2,30,Station De la Concorde -Zone B,120,277
-2,31,Station Montmorency -Zone B,80,293
-4,1,Station Longueuil-Université de Sherbrooke -Zone B,874,465
-4,2,Station Jean-Drapeau,837,543
-4,3,Station Berri-UQAM,733,529
-5,1,Station Snowdon,398,723
-5,2,Station Côte-des-Neiges,410,660
-5,3,Station Université-de-Montréal,430,620
-5,4,Station Édouard-Montpetit,447,574
-5,5,Station Outremont,434,485
-5,6,Station Acadie,399,464
-5,7,Station Parc,398,414
-5,8,Station De Castelnau,424,376
-5,9,Station Jean-Talon,452,350
-5,10,Station Fabre,488,302
-5,11,Station D'Iberville,521,265
-5,12,Station Saint-Michel,531,234
+1,1,Station Angrignon,501,920
+1,2,Station Monk,542,905
+1,3,Station Jolicoeur,592,883
+1,4,Station Verdun,636,871
+1,5,Station De l'Église,660,858
+1,6,Station LaSalle,673,821
+1,7,Station Charlevoix,668,790
+1,8,Station Lionel-Groulx,617,780
+1,9,Station Atwater,590,748
+1,10,Station Guy-Concordia,639,710
+1,11,Station Peel,677,667
+1,12,Station McGill,701,637
+1,13,Station Place-des-Arts,726,595
+1,14,Station Saint-Laurent,745,564
+1,15,Station Berri-UQAM,763,524
+1,16,Station Beaudry,778,481
+1,17,Station Papineau,790,442
+1,18,Station Frontenac,781,368
+1,19,Station Préfontaine,759,309
+1,20,Station Joliette,762,281
+1,21,Station Pie-IX,749,243
+1,22,Station Viau,756,212
+1,23,Station Assomption,744,174
+1,24,Station Cadillac,738,144
+1,25,Station Langelier,744,124
+1,26,Station Radisson,751,102
+1,27,Station Honoré-Beaugrand,757,80
+2,1,Station Côte-Vertu,148,521
+2,2,Station Du Collège,169,555
+2,3,Station De la Savane,212,621
+2,4,Station Namur,245,663
+2,5,Station Plamondon,297,678
+2,6,Station Côte-Sainte-Catherine,322,700
+2,7,Station Snowdon,354,745
+2,8,Station Villa-Maria,403,784
+2,9,Station Vendôme,489,820
+2,10,Station Place-Saint-Henri,579,806
+2,11,Station Lionel-Groulx,617,780
+2,12,Station Georges-Vanier,645,745
+2,13,Station Lucien-L'Allier,684,704
+2,14,Station Bonaventure,711,676
+2,15,Station Square-Victoria–OACI,738,642
+2,16,Station Place-d'Armes,761,601
+2,17,Station Champ-de-Mars,777,567
+2,18,Station Berri-UQAM,763,524
+2,19,Station Sherbrooke,732,482
+2,20,Station Mont-Royal,656,401
+2,21,Station Laurier,607,365
+2,22,Station Rosemont,510,328
+2,23,Station Beaubien,459,313
+2,24,Station Jean-Talon,407,299
+2,25,Station Jarry,343,292
+2,26,Station Crémazie,305,288
+2,27,Station Sauvé,250,278
+2,28,Station Henri-Bourassa,215,271
+2,29,Station Cartier -Zone B,182,255
+2,30,Station De la Concorde -Zone B,112,273
+2,31,Station Montmorency -Zone B,80,292
+4,1,Station Longueuil-Université de Sherbrooke -Zone B,884,451
+4,2,Station Jean-Drapeau,854,537
+4,3,Station Berri-UQAM,763,524
+5,1,Station Snowdon,354,745
+5,2,Station Côte-des-Neiges,357,683
+5,3,Station Université-de-Montréal,372,643
+5,4,Station Édouard-Montpetit,383,590
+5,5,Station Outremont,365,465
+5,6,Station Acadie,331,439
+5,7,Station Parc,337,379
+5,8,Station De Castelnau,370,331
+5,9,Station Jean-Talon,407,299
+5,10,Station Fabre,455,249
+5,11,Station D'Iberville,495,213
+5,12,Station Saint-Michel,508,187
