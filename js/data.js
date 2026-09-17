@@ -31,6 +31,8 @@ export async function loadData() {
     fetch("trips_today.json").then((r) => r.json()),
   ]);
   const rows = parseCSV(csvText);
+  // Station names are cleaned here so the CSV, the JSON and the map all use the same keys
+  rows.forEach((r) => (r.stop_name = shortName(r.stop_name)));
   const pos = {};
   rows.forEach((r) => (pos[r.stop_name] = [Number(r.x), Number(r.y)]));
   return { rows, pos, trips };

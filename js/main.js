@@ -1,6 +1,7 @@
 import { COLORS, loadData } from "./data.js";
 import { el, drawNetwork } from "./network.js";
 import { trainPosition } from "./trains.js";
+import { upcomingArrivals, headway } from "./station.js";
 
 const svg = document.getElementById("map");
 const networkLayer = el("g", {});
@@ -11,6 +12,9 @@ svg.appendChild(trainLayer);
 let simTime = 0;
 let speed = 1;
 let lastFrame = performance.now();
+let selected = ""; // "" means network view
+let routesHere = null; // routes serving the selected station
+let lastPanelUpdate = -99;
 
 function nowSeconds() {
   const d = new Date();
@@ -29,9 +33,74 @@ function formatTime(s) {
   return [h, m, sec].map((n) => String(n).padStart(2, "0")).join(":");
 }
 
+function formatWait(sec) {
+  if (sec < 30) return "now";
+  return Math.round(sec / 60) + " min";
+}
+
 const { rows, pos, trips } = await loadData();
+const network = await fetch("network.json").then((r) => r.json());
 drawNetwork(networkLayer, rows, pos);
 simTime = nowSeconds();
+
+// Fill the station dropdown, alphabetically
+const stationSelect = document.getElementById("station");
+for (const name of Object.keys(network.stations).sort()) {
+  const opt = document.createElement("option");
+  opt.value = name;
+  opt.textContent = name;
+  stationSelect.appendChild(opt);
+}
+
+function applySelection() {
+  routesHere = selected ? new Set(network.stations[selected].routes) : null;
+
+  // Dim lines that don't serve the selected station
+  for (const line of networkLayer.querySelectorAll("[data-route]")) {
+    const off = selected && !routesHere.has(line.getAttribute("data-route"));
+    line.classList.toggle("dim", off);
+  }
+
+  // Highlight the selected station, dim stations on other lines
+  for (const node of networkLayer.querySelectorAll("[data-station]")) {
+    const name = node.getAttribute("data-station");
+    const serves =
+      !selected || network.stations[name].routes.some((r) => routesHere.has(r));
+    node.classList.toggle("dim", !serves);
+    if (node.tagName === "circle") {
+      node.setAttribute("r", name === selected ? 9 : 5);
+      node.setAttribute("fill", name === selected ? "#ff3" : "#fff");
+    }
+  }
+
+  lastPanelUpdate = -99; // force the panel to refresh straight away
+}
+
+function updatePanel() {
+  const box = document.getElementById("arrivals");
+  if (!selected) {
+    box.innerHTML = "";
+    return;
+  }
+
+  const groups = upcomingArrivals(trips, selected, simTime);
+  if (!groups.length) {
+    box.innerHTML = "<p style='color:#888'>No trains in the next hour.</p>";
+    return;
+  }
+
+  box.innerHTML = groups
+    .map((g) => {
+      const gap = headway(g.waits);
+      return `
+      <div class="dest" style="border-color:${COLORS[g.route]}">
+        <div class="where">to ${g.dest}</div>
+        <div class="waits">${g.waits.map(formatWait).join(" · ")}</div>
+        ${gap ? `<div class="gap">every ~${Math.round(gap / 60)} min</div>` : ""}
+      </div>`;
+    })
+    .join("");
+}
 
 function frame(now) {
   const dt = (now - lastFrame) / 1000;
@@ -47,6 +116,7 @@ function frame(now) {
       trainPosition(trip, simTime + 86400, pos);
     if (!p) continue;
     running++;
+    const dim = selected && !routesHere.has(trip.route);
     trainLayer.appendChild(
       el("circle", {
         cx: p[0],
@@ -55,17 +125,41 @@ function frame(now) {
         fill: COLORS[trip.route],
         stroke: "#fff",
         "stroke-width": 2.5,
+        class: dim ? "dim" : "",
       }),
     );
   }
 
   document.getElementById("clock").textContent = formatTime(simTime);
   document.getElementById("count").textContent = `${running} trains running`;
+
+  // The arrivals panel only needs refreshing a couple of times a second
+  if (Math.abs(simTime - lastPanelUpdate) > 0.5) {
+    updatePanel();
+    lastPanelUpdate = simTime;
+  }
+
   requestAnimationFrame(frame);
 }
 
+stationSelect.onchange = (e) => {
+  selected = e.target.value;
+  applySelection();
+};
 document.getElementById("speed").onchange = (e) =>
   (speed = Number(e.target.value));
-document.getElementById("now").onclick = () => (simTime = nowSeconds());
+document.getElementById("now").onclick = () => {
+  simTime = nowSeconds();
+  lastPanelUpdate = -99;
+};
+
+// Clicking a station on the map selects it too
+svg.addEventListener("click", (e) => {
+  const name = e.target.getAttribute && e.target.getAttribute("data-station");
+  if (!name) return;
+  selected = selected === name ? "" : name;
+  stationSelect.value = selected;
+  applySelection();
+});
 
 requestAnimationFrame(frame);

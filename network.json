@@ -1,0 +1,1401 @@
+{
+ "routes": {
+  "1": {
+   "name": "Ligne 1 - Verte",
+   "color": "#00B300"
+  },
+  "2": {
+   "name": "Ligne 2 - Orange",
+   "color": "#D95700"
+  },
+  "4": {
+   "name": "Ligne 4 - Jaune",
+   "color": "#FFD900"
+  },
+  "5": {
+   "name": "Ligne 5 - Bleue",
+   "color": "#0095E6"
+  }
+ },
+ "stations": {
+  "Angrignon": {
+   "x": 521,
+   "y": 920,
+   "routes": [
+    "1"
+   ],
+   "terminal": true
+  },
+  "Monk": {
+   "x": 561,
+   "y": 900,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Jolicoeur": {
+   "x": 609,
+   "y": 873,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Verdun": {
+   "x": 650,
+   "y": 860,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "De l'Église": {
+   "x": 673,
+   "y": 847,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "LaSalle": {
+   "x": 681,
+   "y": 802,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Charlevoix": {
+   "x": 672,
+   "y": 766,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Lionel-Groulx": {
+   "x": 625,
+   "y": 749,
+   "routes": [
+    "1",
+    "2"
+   ],
+   "terminal": false
+  },
+  "Atwater": {
+   "x": 599,
+   "y": 711,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Guy-Concordia": {
+   "x": 637,
+   "y": 675,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Peel": {
+   "x": 664,
+   "y": 639,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "McGill": {
+   "x": 682,
+   "y": 615,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Place-des-Arts": {
+   "x": 700,
+   "y": 583,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Saint-Laurent": {
+   "x": 717,
+   "y": 559,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Berri-UQAM": {
+   "x": 733,
+   "y": 529,
+   "routes": [
+    "1",
+    "2",
+    "4"
+   ],
+   "terminal": true
+  },
+  "Beaudry": {
+   "x": 749,
+   "y": 495,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Papineau": {
+   "x": 765,
+   "y": 462,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Frontenac": {
+   "x": 762,
+   "y": 399,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Préfontaine": {
+   "x": 747,
+   "y": 346,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Joliette": {
+   "x": 754,
+   "y": 317,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Pie-IX": {
+   "x": 748,
+   "y": 279,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Viau": {
+   "x": 759,
+   "y": 243,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Assomption": {
+   "x": 753,
+   "y": 201,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Cadillac": {
+   "x": 751,
+   "y": 165,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Langelier": {
+   "x": 761,
+   "y": 139,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Radisson": {
+   "x": 772,
+   "y": 110,
+   "routes": [
+    "1"
+   ],
+   "terminal": false
+  },
+  "Honoré-Beaugrand": {
+   "x": 782,
+   "y": 80,
+   "routes": [
+    "1"
+   ],
+   "terminal": true
+  },
+  "Côte-Vertu": {
+   "x": 187,
+   "y": 530,
+   "routes": [
+    "2"
+   ],
+   "terminal": true
+  },
+  "Du Collège": {
+   "x": 213,
+   "y": 561,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "De la Savane": {
+   "x": 260,
+   "y": 620,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Namur": {
+   "x": 295,
+   "y": 656,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Plamondon": {
+   "x": 349,
+   "y": 664,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Côte-Sainte-Catherine": {
+   "x": 372,
+   "y": 681,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Snowdon": {
+   "x": 398,
+   "y": 723,
+   "routes": [
+    "2",
+    "5"
+   ],
+   "terminal": true
+  },
+  "Villa-Maria": {
+   "x": 439,
+   "y": 759,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Vendôme": {
+   "x": 514,
+   "y": 794,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Place-Saint-Henri": {
+   "x": 593,
+   "y": 777,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Georges-Vanier": {
+   "x": 646,
+   "y": 713,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Lucien-L'Allier": {
+   "x": 676,
+   "y": 676,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Bonaventure": {
+   "x": 696,
+   "y": 652,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Square-Victoria–OACI": {
+   "x": 718,
+   "y": 624,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Place-d'Armes": {
+   "x": 736,
+   "y": 592,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Champ-de-Mars": {
+   "x": 751,
+   "y": 564,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Sherbrooke": {
+   "x": 701,
+   "y": 497,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Mont-Royal": {
+   "x": 637,
+   "y": 443,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Laurier": {
+   "x": 604,
+   "y": 419,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Rosemont": {
+   "x": 537,
+   "y": 388,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Beaubien": {
+   "x": 497,
+   "y": 369,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Jean-Talon": {
+   "x": 452,
+   "y": 350,
+   "routes": [
+    "2",
+    "5"
+   ],
+   "terminal": false
+  },
+  "Jarry": {
+   "x": 392,
+   "y": 334,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Crémazie": {
+   "x": 352,
+   "y": 323,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Sauvé": {
+   "x": 291,
+   "y": 305,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Henri-Bourassa": {
+   "x": 249,
+   "y": 291,
+   "routes": [
+    "2"
+   ],
+   "terminal": true
+  },
+  "Cartier": {
+   "x": 206,
+   "y": 268,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "De la Concorde": {
+   "x": 120,
+   "y": 277,
+   "routes": [
+    "2"
+   ],
+   "terminal": false
+  },
+  "Montmorency": {
+   "x": 80,
+   "y": 293,
+   "routes": [
+    "2"
+   ],
+   "terminal": true
+  },
+  "Longueuil-Université de Sherbrooke": {
+   "x": 874,
+   "y": 465,
+   "routes": [
+    "4"
+   ],
+   "terminal": true
+  },
+  "Jean-Drapeau": {
+   "x": 837,
+   "y": 543,
+   "routes": [
+    "4"
+   ],
+   "terminal": false
+  },
+  "Côte-des-Neiges": {
+   "x": 410,
+   "y": 660,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Université-de-Montréal": {
+   "x": 430,
+   "y": 620,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Édouard-Montpetit": {
+   "x": 447,
+   "y": 574,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Outremont": {
+   "x": 434,
+   "y": 485,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Acadie": {
+   "x": 399,
+   "y": 464,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Parc": {
+   "x": 398,
+   "y": 414,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "De Castelnau": {
+   "x": 424,
+   "y": 376,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Fabre": {
+   "x": 488,
+   "y": 302,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "D'Iberville": {
+   "x": 521,
+   "y": 265,
+   "routes": [
+    "5"
+   ],
+   "terminal": false
+  },
+  "Saint-Michel": {
+   "x": 531,
+   "y": 234,
+   "routes": [
+    "5"
+   ],
+   "terminal": true
+  }
+ },
+ "edges": [
+  {
+   "route": "1",
+   "from": "Angrignon",
+   "to": "Monk",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Monk",
+   "to": "Jolicoeur",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Jolicoeur",
+   "to": "Verdun",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Verdun",
+   "to": "De l'Église",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "De l'Église",
+   "to": "LaSalle",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "LaSalle",
+   "to": "Charlevoix",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Charlevoix",
+   "to": "Lionel-Groulx",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Lionel-Groulx",
+   "to": "Atwater",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Atwater",
+   "to": "Guy-Concordia",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Guy-Concordia",
+   "to": "Peel",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Peel",
+   "to": "McGill",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "McGill",
+   "to": "Place-des-Arts",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Place-des-Arts",
+   "to": "Saint-Laurent",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Saint-Laurent",
+   "to": "Berri-UQAM",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Berri-UQAM",
+   "to": "Beaudry",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Beaudry",
+   "to": "Papineau",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Papineau",
+   "to": "Frontenac",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Frontenac",
+   "to": "Préfontaine",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Préfontaine",
+   "to": "Joliette",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Joliette",
+   "to": "Pie-IX",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Pie-IX",
+   "to": "Viau",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Viau",
+   "to": "Assomption",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Assomption",
+   "to": "Cadillac",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Cadillac",
+   "to": "Langelier",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Langelier",
+   "to": "Radisson",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Radisson",
+   "to": "Honoré-Beaugrand",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Honoré-Beaugrand",
+   "to": "Radisson",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Radisson",
+   "to": "Langelier",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Langelier",
+   "to": "Cadillac",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Cadillac",
+   "to": "Assomption",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Assomption",
+   "to": "Viau",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Viau",
+   "to": "Pie-IX",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Pie-IX",
+   "to": "Joliette",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Joliette",
+   "to": "Préfontaine",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Préfontaine",
+   "to": "Frontenac",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Frontenac",
+   "to": "Papineau",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Papineau",
+   "to": "Beaudry",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Beaudry",
+   "to": "Berri-UQAM",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Berri-UQAM",
+   "to": "Saint-Laurent",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Saint-Laurent",
+   "to": "Place-des-Arts",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Place-des-Arts",
+   "to": "McGill",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "McGill",
+   "to": "Peel",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Peel",
+   "to": "Guy-Concordia",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Guy-Concordia",
+   "to": "Atwater",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Atwater",
+   "to": "Lionel-Groulx",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Lionel-Groulx",
+   "to": "Charlevoix",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Charlevoix",
+   "to": "LaSalle",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "LaSalle",
+   "to": "De l'Église",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "De l'Église",
+   "to": "Verdun",
+   "seconds": 60
+  },
+  {
+   "route": "1",
+   "from": "Verdun",
+   "to": "Jolicoeur",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Jolicoeur",
+   "to": "Monk",
+   "seconds": 120
+  },
+  {
+   "route": "1",
+   "from": "Monk",
+   "to": "Angrignon",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Montmorency",
+   "to": "De la Concorde",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "De la Concorde",
+   "to": "Cartier",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Cartier",
+   "to": "Henri-Bourassa",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Henri-Bourassa",
+   "to": "Sauvé",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Sauvé",
+   "to": "Crémazie",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Crémazie",
+   "to": "Jarry",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Jarry",
+   "to": "Jean-Talon",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Jean-Talon",
+   "to": "Beaubien",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Beaubien",
+   "to": "Rosemont",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Rosemont",
+   "to": "Laurier",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Laurier",
+   "to": "Mont-Royal",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Mont-Royal",
+   "to": "Sherbrooke",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Sherbrooke",
+   "to": "Berri-UQAM",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Berri-UQAM",
+   "to": "Champ-de-Mars",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Champ-de-Mars",
+   "to": "Place-d'Armes",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Place-d'Armes",
+   "to": "Square-Victoria–OACI",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Square-Victoria–OACI",
+   "to": "Bonaventure",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Bonaventure",
+   "to": "Lucien-L'Allier",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Lucien-L'Allier",
+   "to": "Georges-Vanier",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Georges-Vanier",
+   "to": "Lionel-Groulx",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Lionel-Groulx",
+   "to": "Place-Saint-Henri",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Place-Saint-Henri",
+   "to": "Vendôme",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Vendôme",
+   "to": "Villa-Maria",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Villa-Maria",
+   "to": "Snowdon",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Snowdon",
+   "to": "Côte-Sainte-Catherine",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Côte-Sainte-Catherine",
+   "to": "Plamondon",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Plamondon",
+   "to": "Namur",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Namur",
+   "to": "De la Savane",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "De la Savane",
+   "to": "Du Collège",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Du Collège",
+   "to": "Côte-Vertu",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Côte-Vertu",
+   "to": "Du Collège",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Du Collège",
+   "to": "De la Savane",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "De la Savane",
+   "to": "Namur",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Namur",
+   "to": "Plamondon",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Plamondon",
+   "to": "Côte-Sainte-Catherine",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Côte-Sainte-Catherine",
+   "to": "Snowdon",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Snowdon",
+   "to": "Villa-Maria",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Villa-Maria",
+   "to": "Vendôme",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Vendôme",
+   "to": "Place-Saint-Henri",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Place-Saint-Henri",
+   "to": "Lionel-Groulx",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Lionel-Groulx",
+   "to": "Georges-Vanier",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Georges-Vanier",
+   "to": "Lucien-L'Allier",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Lucien-L'Allier",
+   "to": "Bonaventure",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Bonaventure",
+   "to": "Square-Victoria–OACI",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Square-Victoria–OACI",
+   "to": "Place-d'Armes",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Place-d'Armes",
+   "to": "Champ-de-Mars",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Champ-de-Mars",
+   "to": "Berri-UQAM",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Berri-UQAM",
+   "to": "Sherbrooke",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Sherbrooke",
+   "to": "Mont-Royal",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Mont-Royal",
+   "to": "Laurier",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Laurier",
+   "to": "Rosemont",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Rosemont",
+   "to": "Beaubien",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Beaubien",
+   "to": "Jean-Talon",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Jean-Talon",
+   "to": "Jarry",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Jarry",
+   "to": "Crémazie",
+   "seconds": 60
+  },
+  {
+   "route": "2",
+   "from": "Crémazie",
+   "to": "Sauvé",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Sauvé",
+   "to": "Henri-Bourassa",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Henri-Bourassa",
+   "to": "Cartier",
+   "seconds": 120
+  },
+  {
+   "route": "2",
+   "from": "Cartier",
+   "to": "De la Concorde",
+   "seconds": 180
+  },
+  {
+   "route": "2",
+   "from": "De la Concorde",
+   "to": "Montmorency",
+   "seconds": 120
+  },
+  {
+   "route": "4",
+   "from": "Berri-UQAM",
+   "to": "Jean-Drapeau",
+   "seconds": 180
+  },
+  {
+   "route": "4",
+   "from": "Jean-Drapeau",
+   "to": "Longueuil-Université de Sherbrooke",
+   "seconds": 180
+  },
+  {
+   "route": "4",
+   "from": "Longueuil-Université de Sherbrooke",
+   "to": "Jean-Drapeau",
+   "seconds": 120
+  },
+  {
+   "route": "4",
+   "from": "Jean-Drapeau",
+   "to": "Berri-UQAM",
+   "seconds": 240
+  },
+  {
+   "route": "5",
+   "from": "Snowdon",
+   "to": "Côte-des-Neiges",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Côte-des-Neiges",
+   "to": "Université-de-Montréal",
+   "seconds": 120
+  },
+  {
+   "route": "5",
+   "from": "Université-de-Montréal",
+   "to": "Édouard-Montpetit",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Édouard-Montpetit",
+   "to": "Outremont",
+   "seconds": 120
+  },
+  {
+   "route": "5",
+   "from": "Outremont",
+   "to": "Acadie",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Acadie",
+   "to": "Parc",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Parc",
+   "to": "De Castelnau",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "De Castelnau",
+   "to": "Jean-Talon",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Jean-Talon",
+   "to": "Fabre",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Fabre",
+   "to": "D'Iberville",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "D'Iberville",
+   "to": "Saint-Michel",
+   "seconds": 120
+  },
+  {
+   "route": "5",
+   "from": "Saint-Michel",
+   "to": "D'Iberville",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "D'Iberville",
+   "to": "Fabre",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Fabre",
+   "to": "Jean-Talon",
+   "seconds": 120
+  },
+  {
+   "route": "5",
+   "from": "Jean-Talon",
+   "to": "De Castelnau",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "De Castelnau",
+   "to": "Parc",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Parc",
+   "to": "Acadie",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Acadie",
+   "to": "Outremont",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Outremont",
+   "to": "Édouard-Montpetit",
+   "seconds": 120
+  },
+  {
+   "route": "5",
+   "from": "Édouard-Montpetit",
+   "to": "Université-de-Montréal",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Université-de-Montréal",
+   "to": "Côte-des-Neiges",
+   "seconds": 60
+  },
+  {
+   "route": "5",
+   "from": "Côte-des-Neiges",
+   "to": "Snowdon",
+   "seconds": 120
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-import { COLORS, shortName } from "./data.js";
+import { COLORS } from "./data.js";
 
 const NS = "http://www.w3.org/2000/svg";
 
@@ -59,31 +59,38 @@ export function drawNetwork(layer, rows, pos) {
         "stroke-width": 8,
         "stroke-linejoin": "round",
         "stroke-linecap": "round",
+        "data-route": route,
       }),
     );
   }
 
-  // Stations and labels
-  const shown = new Set();
+  // Stations and labels (names are already short by this point)
   for (const name in pos) {
     const [x, y] = pos[name];
-    const short = shortName(name);
-    layer.appendChild(el("circle", { cx: x, cy: y, r: 5, fill: "#fff" }));
+    layer.appendChild(
+      el("circle", {
+        cx: x,
+        cy: y,
+        r: 5,
+        fill: "#fff",
+        "data-station": name,
+      }),
+    );
 
-    const [dx, dy, anchor] = LABEL_SIDES[LABELS[short] || "right"];
+    const [dx, dy, anchor] = LABEL_SIDES[LABELS[name] || "right"];
     const label = el("text", {
       x: x + dx,
       y: y + dy,
       fill: "#bbb",
       "font-size": 10,
       "text-anchor": anchor,
+      "data-station": name,
     });
-    label.textContent = short;
+    label.textContent = name;
     layer.appendChild(label);
-    shown.add(short);
   }
 
   for (const key in LABELS) {
-    if (!shown.has(key)) console.warn("LABELS entry matches no station:", key);
+    if (!(key in pos)) console.warn("LABELS entry matches no station:", key);
   }
 }
