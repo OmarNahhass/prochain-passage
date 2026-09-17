@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #eee;
+  font-family: sans-serif;
+  display: flex;
+}
+
+#side { width: 240px; padding: 16px; flex-shrink: 0; }
+#clock { font-size: 36px; font-variant-numeric: tabular-nums; margin: 8px 0; }
+select, button { padding: 4px 8px; }
+
+#map { height: 100vh; width: auto; }
+
+#map text {
+  paint-order: stroke;
+  stroke: #000;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
