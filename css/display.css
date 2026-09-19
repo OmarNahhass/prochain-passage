@@ -53,9 +53,9 @@ html, body {
 }
 
 #panel {
-  width: 30vw;
-  min-width: 340px;
-  padding: 3vh 2.4vw;
+  width: 24vw;
+  min-width: 300px;
+  padding: 3vh 2vw;
   display: flex;
   flex-direction: column;
   border-left: 1px solid #1c1c1c;
@@ -70,27 +70,31 @@ html, body {
 }
 
 #station-picker {
+  appearance: none;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-family: inherit;
   font-size: 3.1vh;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: transparent;
-  color: #fff;
-  border: none;
-  padding: 0;
-  font-family: inherit;
   cursor: pointer;
-  max-width: 20vw;
 }
 
 #station-picker:focus { outline: none; }
 
+#station-picker:hover { color: #ddd; }
+
 #station-picker option {
   background: #111;
+  color: #eee;
   font-size: 16px;
+  font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
 }
+
 
 #clock {
   font-size: 3.1vh;
