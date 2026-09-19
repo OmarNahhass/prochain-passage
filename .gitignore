@@ -4,3 +4,4 @@ gtfs_stm.zip
 .ipynb_checkpoints/
 metro_stop_times.csv
 .env
+__pycache__/

@@ -1,14 +1,15 @@
-"""Serves the site and proxies STM's i3 service-status API.
-
-Run with:  uvicorn server:app --reload --port 8000
-"""
+import asyncio
+import datetime
 import os
 import time
+from contextlib import asynccontextmanager
 
 import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
+
+from build_data import build_today
 
 load_dotenv()
 API_KEY = os.getenv("STM_API_KEY")
@@ -17,16 +18,41 @@ STM_URL = "https://api.stm.info/pub/od/i3/v2/messages/etatservice"
 METRO_ROUTES = {"1", "2", "4", "5"}
 NORMAL = "Service normal"
 CACHE_SECONDS = 60
+REBUILD_HOUR = 3
 
-app = FastAPI()
-
-# Cache STM's answer: several screens polling often shouldn't mean many API calls
 _cache = {"at": 0.0, "data": None}
+
+
+def seconds_until(hour):
+    now = datetime.datetime.now()
+    target = now.replace(hour=hour, minute=0, second=0, microsecond=0)
+    if target <= now:
+        target += datetime.timedelta(days=1)
+    return (target - now).total_seconds()
+
+
+async def rebuild_loop():
+    while True:
+        try:
+            result = await asyncio.to_thread(build_today)
+            print("data rebuilt:", result)
+        except Exception as e:
+            print("rebuild failed:", e)
+        await asyncio.sleep(seconds_until(REBUILD_HOUR))
+
+
+@asynccontextmanager
+async def lifespan(app):
+    task = asyncio.create_task(rebuild_loop())
+    yield
+    task.cancel()
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.get("/api/status")
 async def status():
-    """The raw i3 feed: every alert for the whole network, buses included."""
     if not API_KEY:
         raise HTTPException(500, "STM_API_KEY is not set. Check your .env file.")
 
@@ -51,13 +77,11 @@ async def status():
 
 
 def _text(texts):
-    """STM gives each message in French and English; English is often null."""
     by_lang = {t["language"]: t["text"] for t in texts or []}
     return by_lang.get("fr") or by_lang.get("en") or ""
 
 
 def _strip_html(s):
-    """STM embeds <a> tags in messages; a display screen can't use links."""
     out, depth = [], 0
     for ch in s:
         if ch == "<":
@@ -71,7 +95,6 @@ def _strip_html(s):
 
 @app.get("/api/metro-status")
 async def metro_status():
-    """Per-line status, plus any station-level notices, for the metro only."""
     data = await status()
     now = time.time()
 
@@ -87,7 +110,6 @@ async def metro_status():
         if not routes:
             continue
 
-        # Skip alerts that haven't started yet or have already ended
         period = alert.get("active_periods") or {}
         start, end = period.get("start"), period.get("end")
         if (start and start > now) or (end and end < now):
@@ -120,5 +142,4 @@ async def metro_status():
     }
 
 
-# Everything else is served as static files, like python -m http.server
 app.mount("/", StaticFiles(directory=".", html=True), name="site")

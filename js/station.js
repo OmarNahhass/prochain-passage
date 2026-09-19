@@ -1,4 +1,5 @@
-// Find the next trains arriving at a station, grouped by destination.
+import { shortName } from "./data.js";
+
 export function upcomingArrivals(
   trips,
   station,
@@ -13,11 +14,11 @@ export function upcomingArrivals(
     if (i === -1) continue;
 
     let wait = trip.times[i] - t;
-    if (wait < -60) wait += 86400; // just after midnight, look at yesterday's late trains
+    if (wait < -60) wait += 86400;
     if (wait < -60 || wait > horizon) continue;
 
     const last = trip.stops.length - 1;
-    const dest = i === last ? "end of line" : trip.stops[last];
+    const dest = i === last ? "end of line" : shortName(trip.stops[last]);
     const key = trip.route + "|" + dest;
 
     if (!byDest.has(key))
@@ -36,10 +37,7 @@ export function upcomingArrivals(
   return groups;
 }
 
-// Average gap between consecutive trains, in seconds
 export function headway(waits) {
   if (waits.length < 2) return null;
-  const gaps = [];
-  for (let i = 1; i < waits.length; i++) gaps.push(waits[i] - waits[i - 1]);
-  return gaps.reduce((a, b) => a + b, 0) / gaps.length;
+  return (waits[waits.length - 1] - waits[0]) / (waits.length - 1);
 }

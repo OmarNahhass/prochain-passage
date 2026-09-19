@@ -1,5 +1,3 @@
-// Poll the backend for live service status. Returns null when the backend
-// isn't reachable, so the display keeps working as a schedule-only view.
 export async function fetchStatus() {
   try {
     const r = await fetch("/api/metro-status");
@@ -10,10 +8,7 @@ export async function fetchStatus() {
   }
 }
 
-// Notices that name any of this station's stop codes
-export function noticesFor(status, stopCodes) {
-  if (!status || !stopCodes || !stopCodes.length) return [];
-  return status.notices.filter((n) =>
-    n.stops.some((c) => stopCodes.includes(c)),
-  );
+export function noticesFor(status, stopCode) {
+  if (!status || !stopCode) return [];
+  return status.notices.filter((n) => n.stops.includes(stopCode));
 }

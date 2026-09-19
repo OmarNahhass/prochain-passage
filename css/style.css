@@ -20,10 +20,8 @@ hr { border: none; border-top: 1px solid #333; margin: 16px 0; }
   stroke-linejoin: round;
 }
 
-/* Dim everything not related to the selected station */
 .dim { opacity: 0.18; }
 
-/* Arrivals panel */
 #arrivals { margin-top: 12px; }
 .dest {
   border-left: 4px solid;

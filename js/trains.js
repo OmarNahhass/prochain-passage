@@ -1,8 +1,6 @@
-const DWELL = 25; // seconds a train stays stopped at each station
-const OFFSET = 6; // pixels to the side of the line
+const DWELL = 25;
+const OFFSET = 6;
 
-// Where a train is at time t, plus which way it's pointing.
-// Returns { x, y, angle } in degrees, or null when the trip isn't running.
 export function trainState(trip, t, pos) {
   const times = trip.times;
   if (t < times[0] || t > times[times.length - 1]) return null;
@@ -16,7 +14,6 @@ export function trainState(trip, t, pos) {
       const span = times[i + 1] - times[i];
       const elapsed = t - times[i];
 
-      // Stopped at station A for the first DWELL seconds, then moving toward B
       let f;
       if (span <= DWELL) {
         f = span === 0 ? 0 : elapsed / span;
@@ -37,10 +34,4 @@ export function trainState(trip, t, pos) {
     }
   }
   return null;
-}
-
-// Position only, kept for the development view in index.html
-export function trainPosition(trip, t, pos) {
-  const s = trainState(trip, t, pos);
-  return s ? [s.x, s.y] : null;
 }

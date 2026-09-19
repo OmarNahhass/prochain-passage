@@ -35,8 +35,6 @@ function el(tag, attrs) {
   for (const k in attrs) e.setAttribute(k, attrs[k]);
   return e;
 }
-
-// Background grid
 const grid = el("g", { stroke: "#222" });
 for (let i = 0; i <= 1000; i += GRID) {
   grid.appendChild(el("line", { x1: i, y1: 0, x2: i, y2: 1000 }));
@@ -45,8 +43,6 @@ for (let i = 0; i <= 1000; i += GRID) {
 svg.appendChild(grid);
 const layer = el("g", {});
 svg.appendChild(layer);
-
-// Skip stations that are already placed, or copy positions from the same station on another line
 function autoFill() {
   const filled = [];
   while (index < stations.length) {
@@ -120,8 +116,6 @@ document.getElementById("save").onclick = () => {
   a.download = "stations_schematic.csv";
   a.click();
 };
-
-// Load the CSV
 fetch("stations_schematic.csv")
   .then(r => r.text())
   .then(text => {
