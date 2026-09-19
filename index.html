@@ -20,9 +20,11 @@
     <div id="alerts"></div>
     <footer>
       Prochains départs · Next departures
+      <div class="copyright">© <span id="year"></span> Omar Nahhas</div>
     </footer>
   </aside>
 </div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 <script type="module" src="js/display.js"></script>
 </body>
 </html>

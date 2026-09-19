@@ -165,6 +165,14 @@ html, body {
   text-transform: uppercase;
 }
 
+#panel footer .copyright {
+  margin-top: 0.8vh;
+  font-size: 1.4vh;
+  color: #4a4a4a;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
 .line-disrupted {
   opacity: 0.3;
   stroke-dasharray: 14 10;
