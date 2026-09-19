@@ -96,7 +96,7 @@ for (const [name, s] of Object.entries(network.stations)) {
   if (s.terminal || s.routes.length > 1) labelled.add(name);
 }
 
-drawNetwork(networkLayer, rows, pos, labelled);
+drawNetwork(networkLayer, rows, pos);
 document.getElementById("station-name").textContent = STATION.toUpperCase();
 simTime = nowSeconds();
 

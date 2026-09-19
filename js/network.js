@@ -18,74 +18,115 @@ const LABEL_SIDES = {
   below: [0, 21, "middle"],
 };
 
-// Stations whose label shouldn't use the default ("right")
+// Label side for every station, one side per straight run of the schematic.
+// Bends, interchanges and terminals may break from their run to stay clear.
+// Checked collision-free at 14px (display.css); stations missing here fall back to "right".
 const LABELS = {
-  // Orange, north
-  Montmorency: "left",
-  "De la Concorde": "above",
-  Cartier: "above",
-  "Henri-Bourassa": "right-low",
-  Sauvé: "right-low",
-  Crémazie: "left-low",
-  Jarry: "right-low",
-  "Jean-Talon": "left-low",
-  Beaubien: "right-low",
-  Rosemont: "right",
-  Laurier: "left",
-  "Mont-Royal": "right-low",
-  Sherbrooke: "left",
-
-  // Blue
-  "De Castelnau": "left",
-  Parc: "left",
-  Acadie: "left",
-  Outremont: "left-low",
-  "Édouard-Montpetit": "left",
-  "Université-de-Montréal": "left",
-  "Côte-des-Neiges": "left",
+  // Orange, SE run: Côte-Vertu to Place-Saint-Henri
+  "Côte-Vertu": "right",
+  "Du Collège": "left-low",
+  "De la Savane": "left-low",
+  Namur: "left-low",
+  Plamondon: "left-low",
   "Côte-Sainte-Catherine": "left-low",
-
-  // Downtown, Green and Orange together
-  "Berri-UQAM": "left-low",
-  "Saint-Laurent": "left",
-  "Place-des-Arts": "left",
-  McGill: "left",
-  Peel: "left-low",
-  "Guy-Concordia": "left",
-  Atwater: "left",
-  "Champ-de-Mars": "right",
-  "Place-d'Armes": "right-low",
-  "Square-Victoria-OACI": "right",
-  Bonaventure: "right-low",
-  "Lucien-L'Allier": "right",
-  "Georges-Vanier": "right-low",
-  "Lionel-Groulx": "right",
-  Charlevoix: "right",
-  LaSalle: "right-low",
-
-  // Orange, west
-  Plamondon: "left",
-  Namur: "left",
-  Snowdon: "left",
-  "Villa-Maria": "right-low",
+  Snowdon: "left-low",
+  "Villa-Maria": "left-low",
   Vendôme: "left-low",
-  "Place-Saint-Henri": "left",
+  "Place-Saint-Henri": "left-low",
 
-  // Green, south
-  Jolicoeur: "left",
-  Monk: "left-low",
+  // Orange, E run: Lionel-Groulx
+  "Lionel-Groulx": "right-low",
+
+  // Orange, NE run: Georges-Vanier to Square-Victoria–OACI
+  "Georges-Vanier": "right-low",
+  "Lucien-L'Allier": "right-low",
+  Bonaventure: "right-low",
+  "Square-Victoria–OACI": "right-low",
+
+  // Orange, N run: Place-d'Armes to Champ-de-Mars
+  "Place-d'Armes": "right-low",
+  "Champ-de-Mars": "right-low",
+
+  // Orange, NW run: Berri-UQAM to Mont-Royal
+  "Berri-UQAM": "left-low",
+  Sherbrooke: "left-low",
+  "Mont-Royal": "right",
+
+  // Orange, W run: Laurier to Rosemont
+  Laurier: "above",
+  Rosemont: "left-low",
+
+  // Orange, NW run: Beaubien to Montmorency
+  Beaubien: "right",
+  "Jean-Talon": "left-low",
+  Jarry: "right",
+  Crémazie: "right",
+  Sauvé: "right",
+  "Henri-Bourassa": "right",
+  Cartier: "right",
+  "De la Concorde": "right",
+  Montmorency: "right",
+
+  // Green, NE run: Angrignon to De l'Église
+  Angrignon: "right-low",
+  Monk: "right-low",
+  Jolicoeur: "right-low",
   Verdun: "right-low",
-  "De l'Église": "right",
-  Angrignon: "left-low",
+  "De l'Église": "right-low",
 
-  // Green, east
-  Papineau: "right-low",
+  // Green, N run: LaSalle to Atwater
+  LaSalle: "left-low",
+  Charlevoix: "left-low",
+  Atwater: "left-low",
+
+  // Green, NE run: Guy-Concordia to McGill
+  "Guy-Concordia": "left",
+  Peel: "left",
+  McGill: "left",
+
+  // Green, N run: Place-des-Arts to Saint-Laurent
+  "Place-des-Arts": "left",
+  "Saint-Laurent": "left",
+
+  // Green, NE run: Beaudry to Papineau
+  Beaudry: "left",
+  Papineau: "left",
+
+  // Green, N run: Frontenac to Cadillac
   Frontenac: "right",
-  Préfontaine: "right-low",
+  Préfontaine: "right",
+  Joliette: "right",
+  "Pie-IX": "right",
+  Viau: "right",
+  Assomption: "right",
+  Cadillac: "left",
 
-  // Yellow
+  // Green, NE run: Langelier to Honoré-Beaugrand
+  Langelier: "left",
+  Radisson: "left",
+  "Honoré-Beaugrand": "left",
+
+  // Blue, N run: Côte-des-Neiges to Édouard-Montpetit
+  "Côte-des-Neiges": "right-low",
+  "Université-de-Montréal": "right-low",
+  "Édouard-Montpetit": "right-low",
+
+  // Blue, NE run: Outremont
+  Outremont: "left",
+
+  // Blue, N run: Acadie to De Castelnau
+  Acadie: "left",
+  Parc: "left",
+  "De Castelnau": "left",
+
+  // Blue, NE run: Fabre to Saint-Michel
+  Fabre: "right-low",
+  "D'Iberville": "right-low",
+  "Saint-Michel": "right-low",
+
+  // Yellow, SW run: Longueuil to Jean-Drapeau
+  Longueuil: "right-low",
   "Jean-Drapeau": "right-low",
-  Longueuil: "right",
 };
 
 // labelOnly: a Set of station names to label. Pass null to label every station.

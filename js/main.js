@@ -44,6 +44,8 @@ function displayName(name) {
 
 const { rows, pos, trips } = await loadData();
 const network = await fetch("network.json").then((r) => r.json());
+// The schematic is larger than the page's default 0 0 1000 1000 canvas; crop to it
+if (network.viewBox) svg.setAttribute("viewBox", network.viewBox);
 drawNetwork(networkLayer, rows, pos);
 simTime = nowSeconds();
 
