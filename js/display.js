@@ -1,14 +1,16 @@
-import { COLORS, loadData, nowSeconds } from "./data.js";
+import { COLORS, loadData } from "./data.js";
 import { el, drawNetwork } from "./network.js";
 import { trainState } from "./trains.js";
 import { upcomingArrivals } from "./station.js";
 import { fetchStatus, noticesFor } from "./status.js";
 
-const STATION = new URLSearchParams(location.search).get("station") || "Beaudry";
+const params = new URLSearchParams(location.search);
+const STATION = params.get("station") || "Beaudry";
 
 const NEAR = 360;
 const IMMINENT = 75;
 const MAX_SHOWN = 3;
+const LABEL_HOPS = 2;
 const STATUS_EVERY = 60;
 
 const LINE_NAMES = {
@@ -24,8 +26,19 @@ const trainLayer = el("g", {});
 svg.appendChild(networkLayer);
 svg.appendChild(trainLayer);
 
+let simTime = 0;
 let lastPanel = -99;
 let serviceStatus = null;
+
+function nowSeconds() {
+  const d = new Date();
+  return (
+    d.getHours() * 3600 +
+    d.getMinutes() * 60 +
+    d.getSeconds() +
+    d.getMilliseconds() / 1000
+  );
+}
 
 function formatClock(s) {
   const h = Math.floor(s / 3600),
@@ -33,24 +46,60 @@ function formatClock(s) {
   return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0");
 }
 
+function displayName(name) {
+  return name.replace(/^Longueuil.*/, "Longueuil");
+}
+
 function formatWait(sec) {
   if (sec < 45) return "à quai";
   return Math.round(sec / 60) + " min";
 }
 
-const { rows, pos, trips, network } = await loadData();
+const { rows, pos, trips } = await loadData();
+const network = await fetch("network.json").then((r) => r.json());
 
 if (!(STATION in network.stations)) {
-  document.getElementById("station-name").textContent =
-    "Unknown station: " + STATION;
+  document.body.textContent = "Unknown station: " + STATION;
   throw new Error("Unknown station: " + STATION);
 }
 
 if (network.viewBox) svg.setAttribute("viewBox", network.viewBox);
 
+function nearbyStations(station, hops) {
+  const near = new Set([station]);
+  let frontier = [station];
+  for (let step = 0; step < hops; step++) {
+    const next = [];
+    for (const e of network.edges) {
+      if (frontier.includes(e.from) && !near.has(e.to)) {
+        near.add(e.to);
+        next.push(e.to);
+      }
+      if (frontier.includes(e.to) && !near.has(e.from)) {
+        near.add(e.from);
+        next.push(e.from);
+      }
+    }
+    frontier = next;
+  }
+  return near;
+}
+
 drawNetwork(networkLayer, rows, pos);
-document.getElementById("station-name").textContent = STATION.toUpperCase();
-let simTime = nowSeconds();
+
+const picker = document.getElementById("station-picker");
+for (const name of Object.keys(network.stations).sort()) {
+  const opt = document.createElement("option");
+  opt.value = name;
+  opt.textContent = name;
+  if (name === STATION) opt.selected = true;
+  picker.appendChild(opt);
+}
+picker.onchange = (e) => {
+  location.search = "?station=" + encodeURIComponent(e.target.value);
+};
+
+simTime = nowSeconds();
 
 const [sx, sy] = pos[STATION];
 networkLayer.appendChild(
@@ -66,7 +115,8 @@ networkLayer.appendChild(
 );
 networkLayer.appendChild(el("circle", { cx: sx, cy: sy, r: 10, fill: "#fff" }));
 
-const MY_CODE = network.stations[STATION].code;
+const HERE = network.stations[STATION];
+const MY_CODES = HERE.codes || (HERE.code ? [HERE.code] : []);
 
 function secondsToStation(trip, t) {
   const i = trip.stops.indexOf(STATION);
@@ -145,7 +195,7 @@ function drawPanel() {
       const rest = g.waits.slice(1);
       return `
       <div class="dir" style="--line:${COLORS[g.route]}">
-        <div class="dest">${g.dest}</div>
+        <div class="dest">${displayName(g.dest)}</div>
         <div class="first ${first < 45 ? "boarding" : ""}">${formatWait(first)}</div>
         ${rest.length ? `<div class="rest">puis ${rest.map(formatWait).join(" · ")}</div>` : ""}
       </div>`;
@@ -180,7 +230,7 @@ function applyStatus() {
     </div>`);
   }
 
-  for (const n of noticesFor(serviceStatus, MY_CODE)) {
+  for (const n of noticesFor(serviceStatus, MY_CODES)) {
     items.push(`<div class="alert">
       <span class="line-name">Cette station</span>
       ${n.message}
@@ -200,7 +250,7 @@ function frame() {
   drawTrains();
   document.getElementById("clock").textContent = formatClock(simTime);
 
-  if (simTime - lastPanel > 1) {
+  if (simTime - lastPanel > 1 || lastPanel < 0) {
     drawPanel();
     lastPanel = simTime;
   }
