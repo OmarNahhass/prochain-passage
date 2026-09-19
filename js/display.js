@@ -2,6 +2,7 @@ import { COLORS, loadData } from "./data.js";
 import { el, drawNetwork } from "./network.js";
 import { trainState } from "./trains.js";
 import { upcomingArrivals } from "./station.js";
+import { fetchStatus, noticesFor } from "./status.js";
 
 // Which station this screen is installed at: display.html?station=Beaudry
 const params = new URLSearchParams(location.search);
@@ -12,6 +13,14 @@ const NEAR = 360; // 6 minutes: drawn large
 const IMMINENT = 75; // about a minute away: halo pulses
 const MAX_SHOWN = 3; // arrivals listed per direction
 const LABEL_HOPS = 2; // label stations within this many stops of here
+const STATUS_EVERY = 60; // seconds between service-status checks
+
+const LINE_NAMES = {
+  1: "Ligne verte",
+  2: "Ligne orange",
+  4: "Ligne jaune",
+  5: "Ligne bleue",
+};
 
 const svg = document.getElementById("map");
 const networkLayer = el("g", {});
@@ -21,6 +30,7 @@ svg.appendChild(trainLayer);
 
 let simTime = 0;
 let lastPanel = -99;
+let serviceStatus = null;
 
 function nowSeconds() {
   const d = new Date();
@@ -86,7 +96,7 @@ for (const [name, s] of Object.entries(network.stations)) {
   if (s.terminal || s.routes.length > 1) labelled.add(name);
 }
 
-drawNetwork(networkLayer, rows, pos);
+drawNetwork(networkLayer, rows, pos, labelled);
 document.getElementById("station-name").textContent = STATION.toUpperCase();
 simTime = nowSeconds();
 
@@ -104,6 +114,10 @@ networkLayer.appendChild(
   }),
 );
 networkLayer.appendChild(el("circle", { cx: sx, cy: sy, r: 10, fill: "#fff" }));
+
+// This station's STM stop codes, used to match service notices
+const HERE = network.stations[STATION];
+const MY_CODES = HERE.codes || (HERE.code ? [HERE.code] : []);
 
 // When does this trip reach our station? Returns seconds away, or null.
 function secondsToStation(trip, t) {
@@ -192,6 +206,53 @@ function drawPanel() {
     .join("");
 }
 
+// ---------- Live service status ----------
+
+function applyStatus() {
+  const box = document.getElementById("alerts");
+  if (!serviceStatus) {
+    box.innerHTML = "";
+    return;
+  }
+
+  // Dim any line that isn't running normally
+  const disrupted = new Set(
+    serviceStatus.lines.filter((l) => !l.normal).map((l) => l.route),
+  );
+  for (const line of networkLayer.querySelectorAll("[data-route]")) {
+    line.classList.toggle(
+      "line-disrupted",
+      disrupted.has(line.getAttribute("data-route")),
+    );
+  }
+
+  const items = [];
+
+  for (const l of serviceStatus.lines) {
+    if (l.normal) continue;
+    items.push(`<div class="alert severe">
+      <span class="line-name">${LINE_NAMES[l.route] || "Ligne " + l.route}</span>
+      ${l.message}
+    </div>`);
+  }
+
+  for (const n of noticesFor(serviceStatus, MY_CODES)) {
+    items.push(`<div class="alert">
+      <span class="line-name">Cette station</span>
+      ${n.message}
+    </div>`);
+  }
+
+  box.innerHTML = items.join("");
+}
+
+async function refreshStatus() {
+  serviceStatus = await fetchStatus();
+  applyStatus();
+}
+
+// ---------- Animation loop ----------
+
 function frame() {
   simTime = nowSeconds();
   drawTrains();
@@ -203,6 +264,9 @@ function frame() {
   }
   requestAnimationFrame(frame);
 }
+
+refreshStatus();
+setInterval(refreshStatus, STATUS_EVERY * 1000);
 
 // Reload once an hour so a screen left running for weeks picks up new data
 setInterval(() => location.reload(), 3600 * 1000);

@@ -146,3 +146,42 @@ html, body {
   0%, 100% { opacity: 0.18; }
   50%      { opacity: 0.55; }
 }
+
+/* ---------- Service status ---------- */
+
+.line-disrupted {
+  opacity: 0.3;
+  stroke-dasharray: 14 10;
+}
+
+#alerts {
+  border-top: 1px solid #262626;
+  margin-top: 1.6vh;
+  padding-top: 1.6vh;
+}
+
+#alerts:empty {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.alert {
+  border-left: 0.7vh solid #e8b400;
+  padding-left: 1.1vw;
+  margin-bottom: 1.4vh;
+  font-size: 1.9vh;
+  line-height: 1.4;
+  color: #cfcfcf;
+}
+
+.alert.severe { border-left-color: #e03b3b; }
+
+.alert .line-name {
+  display: block;
+  font-size: 1.6vh;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.3vh;
+}
