@@ -5,7 +5,6 @@ import { upcomingArrivals } from "./station.js";
 import { fetchStatus, noticesFor } from "./status.js";
 
 const params = new URLSearchParams(location.search);
-const STATION = params.get("station") || "Beaudry";
 
 const NEAR = 360;
 const IMMINENT = 75;
@@ -58,6 +57,11 @@ function formatWait(sec) {
 const { rows, pos, trips } = await loadData();
 const network = await fetch("network.json").then((r) => r.json());
 
+const STATION_NAMES = Object.keys(network.stations).sort((a, b) =>
+  a.localeCompare(b, "fr"),
+);
+const STATION = params.get("station") || STATION_NAMES[0];
+
 if (!(STATION in network.stations)) {
   document.body.textContent = "Unknown station: " + STATION;
   throw new Error("Unknown station: " + STATION);
@@ -88,7 +92,7 @@ function nearbyStations(station, hops) {
 drawNetwork(networkLayer, rows, pos);
 
 const picker = document.getElementById("station-picker");
-for (const name of Object.keys(network.stations).sort()) {
+for (const name of STATION_NAMES) {
   const opt = document.createElement("option");
   opt.value = name;
   opt.textContent = name;
