@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Métro de Montréal</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Métro de Montréal — affichage</title>
+<link rel="stylesheet" href="css/display.css">
 </head>
 <body>
-<div id="side">
-  <h3>Métro de Montréal</h3>
-  <div id="clock">--:--:--</div>
-  <p id="count"></p>
+<div id="screen">
+  <section id="mapside">
+    <svg id="map" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"></svg>
+  </section>
 
-  <label>Station
-    <select id="station">
-      <option value="">All (network view)</option>
-    </select>
-  </label>
-
-  <div id="arrivals"></div>
-
-  <hr>
-  <label>Speed
-    <select id="speed">
-      <option value="1">1×</option>
-      <option value="10">10×</option>
-      <option value="60">60×</option>
-      <option value="300">300×</option>
-    </select>
-  </label>
-  <p><button id="now">Back to now</button></p>
+  <aside id="panel">
+    <header>
+      <div id="station-name">…</div>
+      <div id="clock">--:--</div>
+    </header>
+    <div id="arrivals"></div>
+    <div id="alerts"></div>
+    <footer>
+      Prochains départs · Next departures
+    </footer>
+  </aside>
 </div>
-<svg id="map" viewBox="0 0 1000 1000"></svg>
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/display.js"></script>
 </body>
 </html>
